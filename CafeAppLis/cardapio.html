@@ -1,39 +1,71 @@
+<!-- Define o documento do tipo HTML5 -->
 <!DOCTYPE html>
-<html>
 
+<!-- html: define a estrutura do documento usando html -->
+<html> 
+
+<!-- Cabeçalho da página destinada as configurações da página -->
 <head>
+  
+  <!-- Define o padrão dos caracteres utilizados no dcumento, nesse caso UTF-8 -->
   <meta charset="UTF-8">
+  
+  <!-- Título que aparece na aba do navegador-->
   <title>Cardápio</title>
 
   <!-- Bootstrap - CSS -->
+  <!-- Folha de estilo (CSS) do bootstrap  -->
   <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
+<!-- body: Corpo da página -->
 <body>
+  <!-- header: Cabeçalho da página -->
   <header>
     <!-- Toolbar -->
-    <!-- nav: cria uma seção de página; navbar: cria um cabeçalho de navegação que é colocada na parte superior da pagina; navbar-expand-lg: define o tamanho da barra de navegação, lg corresponde a large(grande); navbar-dark: cor branca dos botões cadarpio; bg-primary: da classe bg-color altera a cor de fundo, no caso azul-->
+    <!-- nav: cria uma seção de página com links de navegação; navbar: cria um cabeçalho de navegação que é colocada na parte superior da pagina; navbar-expand-lg: define o tamanho da barra de navegação, lg corresponde a large(grande); navbar-dark: cor branca dos botões cadarpio; bg-primary: da classe bg-color altera a cor de fundo, no caso azul-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+      <!-- div: cria um conteiner no html; container-fluid: containers são usados ​​para preencher o conteúdo dentro do bootstrap no caso o fluid corresponde ao uso total da largura da janela de visualização-->
       <div class="container-fluid">
+        <!-- tag <a> é um hiperlink de uma página para outra ou para uma seção da mesma página; class navbar-brand:sub-componente do navbar para destacar o nome de seu projeto, produto ou companhia -->
         <a class="navbar-brand" href="#">
           Coffee
+          <!-- small: define o tamanho do texto como pequeno-->
           <small>Arábica</small>
         </a>
-
+        
+        <!--button: cria um botão clicável; navbar-toggler: sub-componente do navbar para plugin collapse, que alterna a visibilidade do conteúdo em classes e plugins javascript; type: define o tipo de botão; data-bs-toggler="collapse": alterna o elemento recolhível para mostrado ou oculto; aria-expanded: Transmite o estado atual do elemento desmontável, se o elemento recolhível for fechado, o atributo no elemento de controle deverá ter um valor de aria-expanded="false"; aria-label: define uma string na tag do elemento atual -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          
+          <!-- span:  cria um contêiner embutido usado para marcar uma parte de um texto ou uma parte de um documento; class="navbar-toggler-icon" -->
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- div: cria um container pro menu -->
         <div class="collapse navbar-collapse" id="navbarNav">
+          
+          <!--ul: cria uma lista não ordenada pra responsividade e estilizado pelo bootstrap -->
           <ul class="navbar-nav">
+            
+            <!-- li: item da lista -->
             <li class="nav-item">
+              
+              <!-- Estiliza o link-->
               <a class="nav-link" href="./index.html">Home</a>
             </li>
+            <!-- li: outro item da lista -->
             <li class="nav-item">
+
+              <!-- Estiliza o link-->
               <a class="nav-link active" aria-current="page" href="#">Cardápio</a>
             </li>
+
+            <!-- li: outro item da lista -->
             <li class="nav-item">
+
+              <!-- Estiliza o link-->
               <a class="nav-link" href="#">Sobre</a>
             </li>
           </ul>
@@ -43,32 +75,53 @@
 
   </header>
   <main>
+    <!-- section: Agrupa modal do cadastro -->
     <section class="my-3">
 
       <!-- Grid -->
+      <!-- Container do modal faz abertura do cadastro -->
       <div class="container">
 
         <!-- Button trigger modal -->
+        <!-- Botão que seleciona o modal; btn-secondary: define a cor do botão; data-bs-target: associa o id do atributo ao js -->
         <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
           +
         </button>
 
         <!-- Modal -->
+        <!-- modal fade: traz o foco para o modal e se associa a sa abertura  -->
         <div class="modal fade" data-bs-keyboard="false" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+          <!-- modal-dialog: Define a largura e margem do modal -->
           <div class="modal-dialog">
+
+            <!-- modal-content: Define o estilo do modal(cor de fundo, borda, etc) -->
             <div class="modal-content">
+
+              <!-- modal-header: define o estilo do botão de fechamento e altura da linha do cabeçalho do modal -->
               <div class="modal-header">
+
+                <!--h5 define como titulo de tamanho especifico -->
                 <h5 class="modal-title" id="exampleModalLabel">Adicionar Item</h5>
+
+                <!-- data-bs-dismiss: Botão que fecha o modal com javascript --> 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
+              
+              <!-- modal-body: Estiliza o corpo do modal -->
               <div class="modal-body">
 
                 <h1>Conteúdo do modal</h1>
 
                 <!-- Formulário -->
+                <!-- cadastro do formulario -->
                 <form id="foodForm">
+
+                  <!-- Define o posicionamento dos elementos-->
                   <div class="mb-3">
+                    
                     <!-- Nome -->
+                    <!-- label: define um rotulo para o campo nome-->
                     <label for="nome" class="form-label">Nome</label>
                     <input type="text" name="nome" id="nome" class="form-control">
                     <div id="nomeHelp" class="form-text">Adicione o nome do Alimento.</div>
@@ -82,20 +135,30 @@
 
                   <!-- Preço -->
                   <div class="mb-3">
+
+                    <!-- label: define rótulo para preco -->
                     <label for="preco" class="form-label">Preço</label>
                     <input type="text" name="preco" id="preco" class="form-control">
                   </div>
 
                   <!-- Imagem -->
                   <div class="mb-3">
+
+                    <!-- label: define rótulo para imagem -->
                     <label for="imagem" class="form-label">Imagem</label>
+
+                    <!-- input: permite inserir os dados no formulário -->
                     <input type="text" name="imagem" id="imagem" class="form-control">
                   </div>
 
+                  <!-- Div vai definir o rodapé com os botõess adicionar e fechar -->
                   <div class="modal-footer">
+
+                    <!-- Botão utilizado para fechar o modal -->
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
 
                     <!-- <input type="submit" value="Adicionar"> -->
+                    <!-- Botão do tipo submit, ele submete um novo item no formulário -->
                     <button type="submit" class="btn btn-primary" id="adicionarFoodButton">
                       Adicionar
                     </button>
@@ -109,6 +172,7 @@
         </div>
 
         <!-- Linha -->
+        <!-- Exibe o cardápio -->
         <div id="itens-cardapio" class="row">
 
           <!-- Colunas-->
@@ -122,9 +186,11 @@
   <footer></footer>
 
   <!-- Cardápio -->
+  <!-- liga ao diretório do arquivo cardapio.js -->
   <script src="./js/cardapio.js" type="module"></script>
 
-  <!-- Bootstrap - Js -->
+  <!--  Bootstrap - Js -->
+  <!-- Faz a animação do bootstrap -->
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
